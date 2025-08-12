@@ -10,9 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
+    "@iconify/react": "^6.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+<<<<<<< HEAD
+    "react-hook-form": "^7.62.0",
+    "react-router-dom": "^7.8.0",
+    "react-toastify": "^11.0.5"
+=======
     "react-router-dom": "^7.8.0"
+>>>>>>> 29242da79d5e4cb6cca972c816993f5de8a385ac
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
