@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import style from "./style.module.css"
+import { Header } from "../../components/header/Header"
 
 
 
@@ -15,7 +16,9 @@ export const Home=()=> {
 
 
  return <>
+ 
 <section>
+  <Header/>
   <div className={style.div}>
 <h1 className={style.title}>Movies</h1>
 <p className={style.subtitle}>🔴 Filmes 🔴</p>
