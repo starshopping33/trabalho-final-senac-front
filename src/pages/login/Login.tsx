@@ -40,9 +40,11 @@ export const Login=()=>{
                 }
                 return<> <Header /> 
                 
-                <Input label={"Email"} type={"text"} placeholder={"Escreva seu e-mail"} register={register("Email")}/>
+                <Input className={style.Input_Email} label={"Email"} type={"text"} placeholder={"Escreva seu e-mail"} register={register("Email")}/>
 
-                <Input label={"Senha"} type={"password"} placeholder={"****"} register={register("Senha")} /> 
+                <Input className={style.Input_Senha} label={"Senha"} type={"password"} placeholder={"****"} register={register("Senha")} /> 
+
+                <button type="submit" className={style.button}>Login</button>
     </>
 }
 
