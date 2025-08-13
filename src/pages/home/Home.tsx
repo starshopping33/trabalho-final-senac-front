@@ -1,45 +1,52 @@
-import React from "react";
-import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 import style from "./style.module.css"
 
-export const home=()=> {
-  const navigate = useNavigate()
 
 
+export const Home=()=> {
+  const getFilmes=async()=>{
+    const res = await fetch("htpp://localhost:3001/filmes")
+    console.log(res,"res")
+  }
+  
+  useEffect(()=>{
+    getFilmes()
+  },[])
 
-
-  return<>
-<main>
 
  return <>
+<section>
+  <div className={style.div}>
+<h1 className={style.title}>Movies</h1>
+<p className={style.subtitle}>🔴 Filmes 🔴</p>
+<p className={style.subtitle}>🔴 login 🔴</p>
 
- 
-            <main>
+</div>
 
-                <div className={style.div}>
-                <div className={style.cupcakeLeft}>🧁</div>
-      
-      <div className={style.titleContainer}>
-        <h1 className={style.title}>Movies</h1>
-        <p className={style.subtitle}>🔴 Filmes 🔴</p>
-      </div>
+</section>
+    
+    </>
+}
+  
+
+   
+
+
+
+
+
+
+
+
+
       
      
 
 
 
-                </div>
-                  
-      
-      
-            </main>
-        </>
-
-
-</main>
 
 
 
 
-  </>
-}
+  
+    
