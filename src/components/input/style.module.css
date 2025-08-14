@@ -1,0 +1,17 @@
+.fieldset {
+    position: relative;
+    border-color: yellow;
+    background-color: gray;
+}
+.icon {
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+    cursor: pointer;
+}
+.error {
+    color: #ff0000;
+    font-size: 12px;
+    font-weight: 600;
+    height: 16px;
+}

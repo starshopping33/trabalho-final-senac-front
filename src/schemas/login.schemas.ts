@@ -1,13 +1,15 @@
 import {z} from "zod"
+import { returnUserSchema } from "./usuario.schemas"
+
 
 
 
 export const createLoginSchema = z.object({
-    email: z.string().min(3,"Insira um e-mail").email("Formato inválido"),
+    email: z.email("Formato inválido"),
     password:z.string().min(4,"Senha deve ter no mínimo 4 caracteres")
 })
 export const returnLoginSchema = z.object({
-    usuario:returnUserSchmea,
+    usuario:returnUserSchema,
     token:z.string()
 })
 

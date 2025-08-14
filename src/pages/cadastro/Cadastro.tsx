@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "../../components/input/Input"
 import { useNavigate } from "react-router-dom"
+import { createCadastroSchema, type iCreateCadastro } from "../../schemas/usuario.schemas"
+import { apiController } from "../../controller/api.controller"
 
 
 export const Cadastro=()=>{
@@ -12,9 +14,6 @@ export const Cadastro=()=>{
     const {
         register,
         handleSubmit,
-        formState:{
-            errors
-        }
     } = useForm<iCreateCadastro>({
         mode:"onBlur",
         resolver: zodResolver(createCadastroSchema)
@@ -22,33 +21,37 @@ export const Cadastro=()=>{
 
     const fazerCadastro = async (cadastroData:iCreateCadastro) => {
         console.log(cadastroData,"cadastroData")
-
         try {
-            const res = await apicontroller.cadastro(cadastroData)
+                const res = await apiController.cadastro(cadastroData)
                 console.log(res,"res do axios")
-                if(res.data.token){
-                    toast.success("Sucesso, cadastro")
-                    localStorage.setItem("token",res.data.token)
-                    setTimeout(() => {
-                        navigate("/")
-                    }, 3000);
 
-                 } } catch (error:any) {
-                        console.log(error,"error")
-                        toast.error(error.response.data.message)
-                    }
+                toast.success("Sucesso, cadastro")
+                localStorage.setItem("token",res.data.token)
+                setTimeout(() => {
+                    navigate("/")
+                }, 3000);
+            } 
+                catch (error:any) {
+                    console.log(error,"error")
+                    toast.error(error.response.data.message)
                 }
+            
+        }
                 return<> <Header /> 
-                
+               
                 <main className={style.main}>
                     <form className={style.form} onSubmit={handleSubmit(fazerCadastro)} >
-                <Input className={style.Input_Email} label={"Email"} type={"text"} placeholder={"Escreva seu e-mail"} register={register("Email")}/>
 
-                <Input className={style.Input_Senha} label={"Senha"} type={"password"} placeholder={"****"} register={register("Senha")} />
+                <Input className={style.Input_Name} label={"Name"} type={"text"} placeholder={"Escreva seu e-mail"} register={register("name")}/>
+
+                <Input className={style.Input_Email} label={"Email"} type={"text"} placeholder={"Escreva seu e-mail"} register={register("email")}/>
+
+                <Input className={style.Input_Senha} label={"Senha"} type={"password"} placeholder={"****"} register={register("password")} />
 
                 <button type="submit" className={style.button}>Cadastro</button> 
                     </form>
                 </main>
+                
     </>
     
 }
