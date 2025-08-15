@@ -1,0 +1,13 @@
+.body {
+    background-color: black;
+}
+.button{
+    transition: all 0.3s ease;
+}
+.button:hover {
+    background-color: yellow;
+    transform: translateY(-2px);
+}
+.button:active {
+    transform: translateY(0);
+}

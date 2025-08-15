@@ -21,15 +21,33 @@ export const Header =()=>{
         <div className={style.botoes}>
             <nav>
                 <button
-                onClick={()=> navigate("/")}
-                className={style.perfilbotao}>
-                Home    
+                    onClick={()=> navigate("/")}
+                    className={style.perfilbotao}>
+                    Home    
                 </button>
 
+            </nav>
+            <nav>
                 <button
-                onClick={() => navigate("/Conta")}
-                className={style.perfilbotao}
-                >Conta
+                    onClick={()=> navigate("/cadastro")}
+                    className={style.perfilbotao2}>
+                    Cadastro'
+                </button>
+            </nav>
+            
+            <nav>
+                <button
+                    onClick={()=> navigate("/login")}
+                    className={style.perfilbotao3}>
+                    Login
+                </button>
+            </nav>
+            
+            <nav>
+                <button
+                    onClick={() => navigate("/conta")}
+                    className={style.perfilbotao4}>
+                    Conta
                 </button>
 
             </nav>
