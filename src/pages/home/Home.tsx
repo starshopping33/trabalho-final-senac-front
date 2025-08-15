@@ -13,16 +13,16 @@ export const Home=()=> {
   useEffect(()=>{
     getFilmes()
   },[])
-
-
+     
+      
  return <>
  
 <section>
   <Header/>
   <div className={style.div}>
-<h1 className={style.title}>Movies</h1>
-<p className={style.subtitle}>🔴 Filmes 🔴</p>
-<p className={style.subtitle}>🔴 login 🔴</p>
+<h1 className={style.title}>Filmes</h1>
+
+
 
 </div>
 

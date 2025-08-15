@@ -18,6 +18,7 @@ export const Header =()=>{
             <h1>IMDB</h1>
         </div>
 
+                
         <div className={style.botoes}>
             <nav>
                 <button
@@ -51,6 +52,8 @@ export const Header =()=>{
                 </button>
 
             </nav>
+                
+
         </div>
     </header>
 }
