@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom"
 import { createLoginSchema, type iCreateLogin } from "../../schemas/login.schemas"
 import { apiController } from "../../controller/api.controller"
 
-
 export const Login=()=>{
     const navigate = useNavigate()
     const {
@@ -23,7 +22,7 @@ export const Login=()=>{
         console.log(loginData,"loginData")
 
         try {
-            const res = await apiController.login(loginData)
+            const res = await apiController.postLogin(loginData)
                 console.log(res,"res do axios")
                 if(res.data.token){
                     toast.success("Sucesso, Login")
@@ -37,18 +36,16 @@ export const Login=()=>{
                         toast.error(error.response.data.message)
                     }
                 }
-                return<> <Header /> 
-
+                return<> 
+                <Header /> 
                 <main className={style.main}>
-                    <form className={style.form} onSubmit={handleSubmit(fazerLogin)}>
+                <form className={style.form} onSubmit={handleSubmit(fazerLogin)} >
                 <Input className={style.Input_Email} label={"Email"} type={"text"} placeholder={"Escreva seu e-mail"} register={register("email")}/>
-
                 <Input className={style.Input_Senha} label={"Senha"} type={"password"} placeholder={"****"} register={register("password")} /> 
 
                 <button type="submit" className={style.button}>Login</button>
-                    </form>
+                </form>
                 </main>
-
     </>
 }
 
