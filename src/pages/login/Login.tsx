@@ -24,9 +24,9 @@ export const Login=()=>{
         try {
             const res = await apiController.postLogin(loginData)
                 console.log(res,"res do axios")
-                if(res.data.token){
+                if(res.token){
                     toast.success("Sucesso, Login")
-                    localStorage.setItem("token",res.data.token)
+                    localStorage.setItem("token",res.token)
                     setTimeout(() => {
                         navigate("/")
                     }, 3000);
@@ -42,7 +42,6 @@ export const Login=()=>{
                 <form className={style.form} onSubmit={handleSubmit(fazerLogin)} >
                 <Input className={style.Input_Email} label={"Email"} type={"text"} placeholder={"Escreva seu e-mail"} register={register("email")}/>
                 <Input className={style.Input_Senha} label={"Senha"} type={"password"} placeholder={"****"} register={register("password")} /> 
-
                 <button type="submit" className={style.button}>Login</button>
                 </form>
                 </main>
