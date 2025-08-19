@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "../../components/input/Input"
 import { useNavigate } from "react-router-dom"
 import { apiController } from "../../controller/api.controller"
-import type { iCreateCadastro } from "../../schemas/usuario.schemas"
+import { createCadastroSchema, type iCreateCadastro } from "../../schemas/usuario.schemas"
 
 
 export const Cadastro=()=>{
@@ -16,7 +16,7 @@ export const Cadastro=()=>{
         handleSubmit,
     } = useForm<iCreateCadastro>({
         mode:"onBlur",
-        resolver: zodResolver()
+        resolver: zodResolver(createCadastroSchema)
     })
 
     const fazerCadastro = async (cadastroData:iCreateCadastro) => {
