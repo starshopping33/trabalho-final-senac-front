@@ -20,6 +20,6 @@ export const apiController = {
 
     getFilmes: async ()=> {
         const res = await service.get("/filmes")
-        return res
+        return res.data
     }
 }

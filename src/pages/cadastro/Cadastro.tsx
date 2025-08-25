@@ -41,6 +41,7 @@ export const Cadastro=()=>{
                
                 <main className={style.main}>
                     <form className={style.form} onSubmit={handleSubmit(fazerCadastro)} >
+                <Input className={style.Input_Name} label={"Name"} type={"text"} placeholder={"Escreva seu Nome"} register={register("name")}/>
                 <Input className={style.Input_Email} label={"Email"} type={"text"} placeholder={"Escreva seu e-mail"} register={register("email")}/>
 
                 <Input className={style.Input_Senha} label={"Senha"} type={"password"} placeholder={"****"} register={register("password")} />
