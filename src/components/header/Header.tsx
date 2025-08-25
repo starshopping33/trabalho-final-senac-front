@@ -31,7 +31,7 @@ export const Header =()=>{
                 <button
                     onClick={()=> navigate("/cadastro")}
                     className={style.perfilbotao2}>
-                    Cadastro'
+                    Cadastro
                 </button>
             </nav>
             

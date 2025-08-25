@@ -1,13 +1,29 @@
-.body {
+.main {
     background-color: black;
+    margin: 0;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.button{
-    transition: all 0.3s ease;
-}
-.button:hover {
-    background-color: yellow;
-    transform: translateY(-2px);
-}
-.button:active {
-    transform: translateY(0);
-}
+
+
+.button {
+      padding: 12px 24px;
+      background-color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: yellow;
+      transform: translateY(-2px);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+    
