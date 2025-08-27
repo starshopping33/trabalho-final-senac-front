@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import style from "./style.module.css"
 import { Header } from "../../components/header/Header"
 import { apiController } from "../../controller/api.controller"
+import { Poster } from "../../components/poster/Poster"
 
 interface Filme {
   backdrop_path: string,
@@ -36,9 +37,10 @@ export const Home=()=> {
 
   {filmes.map((filme)=>{
     return <li>
-        <img src={filme.backdrop_path} alt="" />
-      <p>{filme.poster_path}</p>
-      <p>{filme.title}</p>
+      <p className={style.title}>{filme.title}</p>
+        <img src={'https://image.tmdb.org/t/p/w500/'+filme.poster_path} alt="" />
+      
+      <Poster/>
     </li>
   })}
 </ul>

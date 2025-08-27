@@ -21,5 +21,13 @@ export const apiController = {
     getFilmes: async ()=> {
         const res = await service.get("/filmes")
         return res.data
+    },
+    getFavoritos:async()=>{
+        const res = await service.get("/filmes/favoritar")
+        return res.data
+    },
+    favoritar:async()=>{
+        const res = await service.post("/filmes/favoritar")
+        return res.data
     }
 }
