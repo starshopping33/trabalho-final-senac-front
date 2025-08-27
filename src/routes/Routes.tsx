@@ -5,9 +5,10 @@ import { Home } from "../pages/home/Home"
 
 export const MainRoutes=()=>{
     return <Routes>
-        <Route path="/" element={<header><Home /></header>}/>
+        <Route path="/" element={<Home />}/>
         <Route path="/cadastro" element={<Cadastro/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/Favoritos" element={<Favoritos/}/>
         {/* <Route path="/conta" element={<input>conta</input>}/> */}
     </Routes>
 }
