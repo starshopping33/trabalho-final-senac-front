@@ -18,8 +18,8 @@ export const apiController = {
     },
     
 
-    getFilmes: async ()=> {
-        const res = await service.get("/filmes")
+    getFilmes: async (page:string)=> {
+        const res = await service.get(`/filmes?page=${page}`)
         return res.data
     },
     getFavoritos:async()=>{

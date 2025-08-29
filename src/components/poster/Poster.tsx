@@ -14,13 +14,13 @@ export const Poster = () => {
     };
 
     return (
-        <section className={style.section}>
+        
             <Iconefy
                 onClick={toggleFavorite}
                 className={style.favoriteButton}
                 icon="mdi:heart"
                 color={isFavorite ? "yellow" : "white"}
             />
-        </section>
+        
     );
 };
