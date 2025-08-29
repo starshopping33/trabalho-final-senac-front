@@ -23,23 +23,24 @@ export const Favoritos= ()=> {
 
 
     return <>
-<section>
-  <div className={style.div}>
-<h2 className={style.title2}>Movies Favorites</h2>
-<p className={style.subtitle2}>🔴Filmes Favoritos🔴</p>
+        <section>
+        <div className={style.div}>
+        <h2 className={style.title2}>Movies Favorites</h2>
+            <p className={style.subtitle2}>🔴Filmes Favoritos🔴</p>
     
-<ul>
-    favorites.map((favorites)=>{
-        return <li>
-            <p className={style.title2}>{favorites.}</p>
-        <img src={'https://image.tmdb.org/t/p/w500'+favorites.poster_path} alt =""/>
-        <Poster/>
-        </li}
-    )
-</ul>
-</div>
-<p className={style.subtitle}>🔴 login 🔴</p>
-</div>
-</section>
+        <ul>
+            {favorites.map((favorite)=>{
+            return <li>
+                     <p className={style.title2}>{favorite.title}</p>
+                    <img src={'https://image.tmdb.org/t/p/w500'+favorite.poster_path} alt =""/>
+                    <Poster/>
+                </li>
+                }
+            )}
+        </ul>
+    </div>
+    <p className={style.subtitle}>🔴 login 🔴</p>
 
-</>
+    </section>
+    </>
+}

@@ -1,5 +1,7 @@
 
-
+:root {
+  --bg-color: #000;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
