@@ -27,10 +27,10 @@ export const Home=()=> {
 <section>
   <div className={style.div}>
 <h1 className={style.title}>Movies</h1>
-<p className={style.subtitle}>🔴 Filmes 🔴</p>
+<p className={style.subtitle}> Filmes</p>
 <div className={style.lenght} >
 
-<ul>
+<ul className={style.ul}>
 
   {filmes.map((filme)=>{
     return <li>

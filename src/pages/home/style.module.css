@@ -1,6 +1,22 @@
  body {
     background-color: black;
 }
+.ul{
+    display: flex
+;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+ 
+
+
+
+.subtitle{
+font-size: 48px;
+    color: #e3d9d9;
+}
  
 
 .title2 {
