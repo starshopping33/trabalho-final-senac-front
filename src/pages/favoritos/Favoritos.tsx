@@ -16,7 +16,7 @@ export const Favoritos= ()=> {
     const [favorites,setFavorites] = useState([] as Favoritos[])
     
     const getFavorites=async() => {
-        const res = await apiController.getFilmes()
+        const res = await apiController.getFavoritos()
         console.log(res,"res")
         setFavorites(res.results)
     }

@@ -2,29 +2,17 @@ import { useEffect, useState } from "react"
 import style from "./style.module.css"
 import { apiController } from "../../controller/api.controller"
 import { Poster } from "../../components/poster/Poster"
-import { Comment } from "../../components/comment/Comment"
 import { useNavigate } from "react-router-dom"
+
 export interface Filme {
   backdrop_path: string,
   poster_path: string,
   title:string,
-  id:number
+  id: number
 }
 
 
-export const Home=()=> {    
-   const navigate = useNavigate()       
-    
-    
-        useEffect(() => {
-            const token = localStorage.getItem("token")
-            console.log(token,"token")
-            if (!token) {
-                // navigate("/login")
-            }
-            
-        }, [])
-
+export const Home=()=> {
   const [filmes,setFilmes]= useState([] as Filme[])
   const [page,setPage] = useState(1)
   const getFilmes=async() => {
@@ -50,19 +38,25 @@ const goTo=(filme:Filme)=>{
  return <>
 <section>
   <div className={style.div}>
-
 <p className={style.subtitle}> Filmes</p>
 <div className={style.lenght} >
 
-<ul>
+<ul className={style.ul}>
 
   {filmes.map((filme)=>{
-    return <li>
-      <p className={style.title}>{filme.title}</p>
-        <img src={'https://image.tmdb.org/t/p/w500/'+filme.poster_path} alt="" />
-      
-      <Poster filme={filme}/>
-      <Comment/>
+    return <li className={style.li}>
+
+        
+        <div className={style.card}> 
+          <img  className={style.img}  src={'https://image.tmdb.org/t/p/w500/'+filme.poster_path} alt=""
+           onClick={()=>goTo(filme)} />
+          <div className={style.info}>
+            <p className={style.title}>{filme.title}</p>
+            <Poster filme={filme}/>
+
+          </div>
+           
+      </div>
     </li>
   })}
   
@@ -80,26 +74,3 @@ const goTo=(filme:Filme)=>{
 </section>
     </>
 }
-  
-
-   
-
-
-
-
-
-
-
-
-
-      
-     
-
-
-
-
-
-
-
-  
-    
