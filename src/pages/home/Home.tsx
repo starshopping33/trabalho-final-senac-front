@@ -5,10 +5,11 @@ import { apiController } from "../../controller/api.controller"
 import { Poster } from "../../components/poster/Poster"
 import { useNavigate } from "react-router-dom"
 
-interface Filme {
+export interface Filme {
   backdrop_path: string,
   poster_path: string,
-  title:string
+  title:string,
+  id: number
 }
 
 
@@ -40,11 +41,10 @@ const goTo=(filme:Filme)=>{
 <section>
   <Header/>
   <div className={style.div}>
-
 <p className={style.subtitle}> Filmes</p>
 <div className={style.lenght} >
 
-<ul>
+<ul className={style.ul}>
 
   {filmes.map((filme)=>{
     return <li className={style.li}>
@@ -55,7 +55,7 @@ const goTo=(filme:Filme)=>{
            onClick={()=>goTo(filme)} />
           <div className={style.info}>
             <p className={style.title}>{filme.title}</p>
-            <Poster/>
+            <Poster filme={filme}/>
 
           </div>
            
@@ -77,26 +77,3 @@ const goTo=(filme:Filme)=>{
 </section>
     </>
 }
-  
-
-   
-
-
-
-
-
-
-
-
-
-      
-     
-
-
-
-
-
-
-
-  
-    

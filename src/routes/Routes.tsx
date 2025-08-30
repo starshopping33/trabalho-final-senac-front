@@ -10,7 +10,6 @@ export const MainRoutes=()=>{
         <Route path="/cadastro" element={<Cadastro/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/Favoritos" element={<Favoritos/>}/>
-        
         {/* <Route path="/conta" element={<input>conta</input>}/> */}
         
     

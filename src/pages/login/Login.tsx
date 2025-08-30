@@ -27,6 +27,7 @@ export const Login=()=>{
                 if(res.token){
                     toast.success("Sucesso, Login")
                     localStorage.setItem("token",res.token)
+                    localStorage.setItem("usuario",JSON.stringify(res.usuario))
                     setTimeout(() => {
                         navigate("/")
                     }, 3000);
