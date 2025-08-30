@@ -66,7 +66,7 @@ export const Header =()=>{
                 Favoritos
                 </button>
             </nav>
-                
+            
 
         </div>
     </header>
