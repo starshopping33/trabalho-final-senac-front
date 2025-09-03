@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { iCreateLogin } from "../schemas/login.schemas";
 import type { iCreateCadastro } from "../schemas/usuario.schemas";
-import type { iCreateFavoritar, ireturnfilmesfav } from "../schemas/favoritos.schemas";
+import type { iCreateFavoritar } from "../schemas/favoritos.schemas";
 import { type icreatecomentario } from "../schemas/comment.schemas";
 
 export const service = axios.create({
@@ -34,8 +34,14 @@ export const apiController = {
         const res = await service.get(`/filmes?page=${page}`)
         return res.data
     },
-    getFavoritos:async()=>{
-        const res = await service.get("/filmes/favoritar")
+    getFavoritos:async(token:string)=>{
+        const res = await service.get("/filmes/favoritar",{
+            
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                
+        })
         return res.data
     },
     favoritar:async(postFavoritos:iCreateFavoritar)=>{

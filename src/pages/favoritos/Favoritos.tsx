@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import style from "./style.module.css"
 import { apiController } from "../../controller/api.controller"
 import { Poster } from "../../components/poster/Poster"
+import type { Filme } from "../home/Home"
 
 
 
@@ -16,15 +17,19 @@ export const Favoritos= ()=> {
     const [favorites,setFavorites] = useState([] as Favoritos[])
     
     const getFavorites=async() => {
-        const res = await apiController.getFavoritos()
-        console.log(res,"res")
-        setFavorites(res.results)
+        const token = localStorage.getItem("token")
+        const res = await apiController.getFavoritos(token!)
+        console.log(res,"res favoritos")
+        setFavorites(res)
     }
 
     useEffect(()=> {
         getFavorites()
     },[])
 
+    const goTo=(filme:Filme)=>{
+      console.log(filme,"filme?"); 
+    }
     return (
         <section className={style.section}>
             <div className={style.div}>
@@ -33,11 +38,16 @@ export const Favoritos= ()=> {
             <div className={style.lenght}>
             <ul>
                 
-                {favorites.map((filme)=>{
-                    return <li>
+                {favorites.length && favorites.map((filme)=>{
+                    return <li key={filme.id} className={style.li}>
+                        <div>
+
                         <p className={style.title}>{filme.title}</p>
-                        <img src={'https://image.tmdb.org/t/p/w500/'+filme.poster_path} alt="" />
-                        <Poster filme={filme}/>
+                        <img className={style.img} src={'https://image.tmdb.org/t/p/w500/'+filme.poster_path} alt=""
+                        onClick={()=>goTo(filme)} />
+                        {<Poster  filme={filme}/>}
+                        
+                        </div>
                     </li>
                 })}
             </ul>
