@@ -45,7 +45,7 @@ export const Favoritos= ()=> {
                         <p className={style.title}>{filme.title}</p>
                         <img className={style.img} src={'https://image.tmdb.org/t/p/w500/'+filme.poster_path} alt=""
                         onClick={()=>goTo(filme)} />
-                        {<Poster  filme={filme}/>}
+                        {<Poster callback={getFavorites} isFav={true} filme={filme}/>}
                         
                         </div>
                     </li>

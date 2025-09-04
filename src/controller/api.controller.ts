@@ -51,5 +51,11 @@ export const apiController = {
     comentar:async(postComment:icreatecomentario)=>{
         const res = await service.post("/Comentario", postComment)
         return res.data
+    },
+    desfavoritar:async(idFilme:string)=>{
+         const res = await service.delete(`/filmes/favoritar/${idFilme}`)
+         console.log(res,"res da api")
+         return true
+        
     }
 }
