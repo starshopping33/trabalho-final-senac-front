@@ -75,6 +75,7 @@ const goTo=(filme:Filme)=>{
 <div className={style.lenght} >
 
 <ul className={style.ul}>
+<ul className={style.ul}>
 
   {!loading && filmes.map((filme)=>{
     return <li key={filme.id} className={style.li}>
