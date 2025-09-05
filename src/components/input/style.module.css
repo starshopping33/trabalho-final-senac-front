@@ -1,13 +1,10 @@
-.fieldset {
-    position: relative;
-    border-color: yellow;
-    background-color: gray;
-}
+
 .icon {
     position: absolute;
-    right: 12px;
-    bottom: 6px;
+    right: 18px;
+    bottom: 13px;
     cursor: pointer;
+    color: black;
 }
 .error {
     color: #ff0000;

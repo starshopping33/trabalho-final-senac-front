@@ -9,3 +9,10 @@
 .title {
     color: yellow;
 }
+
+.img{
+        width: 160px;
+    
+    border-radius: 8px;
+    display:block
+}

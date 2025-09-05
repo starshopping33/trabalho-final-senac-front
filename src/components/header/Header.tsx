@@ -14,11 +14,12 @@ export const Header =()=>{
 
     return <header className={style.header}>
 
-        <div className={style.div}>
+        
+<div>
+    <div className={style.div}>
             <h1>IMDB</h1>
         </div>
-
-                
+</div>
         <div className={style.botoes}>
             <nav>
                 <button

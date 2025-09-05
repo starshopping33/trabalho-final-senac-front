@@ -2,14 +2,14 @@ import {useState} from "react"
 import { Iconefy } from "../iconefy/Iconefy";
 import style from "../input/style.module.css"
 interface InputProps {
-    label: string
+    
     type:"text"|"password",
     placeholder:string
     errorMsg?: string
     register:{},
     className?:string
 }
-export const Input = ({label, type,placeholder,errorMsg,register,className}:InputProps)=>{
+export const Input = ({ type,placeholder,errorMsg,register,className}:InputProps)=>{
     const [newType,setNewType] = useState("password")
     const changeType = ()=>{
         if(newType === "password"){
@@ -19,20 +19,23 @@ export const Input = ({label, type,placeholder,errorMsg,register,className}:Inpu
         }
     }
 
-    return <fieldset className={style.fieldset}>
-        <label htmlFor={label}>{label}</label>
-        {
+    return <>
+    
+    {
             type === "password"?
             <>
-            <input className={className} type={newType} {...register} placeholder={placeholder} id={label}/>
-            <Iconefy onClick={changeType} className={style.icon} icon="ri:eye-line"/>
+            <input className={className} type={newType} {...register} placeholder={placeholder} />
+            <Iconefy onClick={changeType} className={style.icon} icon="weui:eyes-off-filled"/>
             </>
         :
-        <input className={className} {...register} placeholder={placeholder} type={type} id={label}/>      
+        <input className={className} {...register} placeholder={placeholder} type={type} />      
         }
         {errorMsg ?
                 <span className={style.error}>{errorMsg}</span>
                 : <span className={style.error}></span>        
         }
-    </fieldset>
+    </>
+       
+        
+    
 }

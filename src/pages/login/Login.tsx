@@ -41,8 +41,15 @@ export const Login=()=>{
                 <Header /> 
                 <main className={style.main}>
                 <form className={style.form} onSubmit={handleSubmit(fazerLogin)} >
-                <Input className={style.Input_Email} label={"Email"} type={"text"} placeholder={"Escreva seu e-mail"} register={register("email")}/>
-                <Input className={style.Input_Senha} label={"Senha"} type={"password"} placeholder={"****"} register={register("password")} /> 
+                    <fieldset className={style.fieldset}>
+                        <label className={style.label} htmlFor="">E-mail</label>
+                        <Input className={style.Input}  type={"text"} placeholder={"Escreva seu e-mail"} register={register("email")}/>
+                    </fieldset>
+                <fieldset className={style.fieldset}>
+                <label className={style.label} htmlFor="">Senha</label>
+                <Input className={style.Input}  type={"password"} placeholder={"****"} register={register("password")} /> 
+                </fieldset>
+                
                 <button type="submit" className={style.button}>Login</button>
                 </form>
                 </main>
