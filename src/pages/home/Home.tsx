@@ -74,7 +74,7 @@ const goTo=(filme:Filme)=>{
 <p className={style.subtitle}> Filmes</p>
 <div className={style.lenght} >
 
-<ul className={style.ul}>
+
 <ul className={style.ul}>
 
   {!loading && filmes.map((filme)=>{
