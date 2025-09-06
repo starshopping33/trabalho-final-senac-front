@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import style from "./style.module.css"
+import { Header } from "../../components/header/Header"
 import { apiController } from "../../controller/api.controller"
 import { Poster } from "../../components/poster/Poster"
 import { useNavigate } from "react-router-dom"
@@ -91,7 +92,9 @@ const goTo=(filme:Filme)=>{
   //document.documentElement.style.setProperty('--bg-color', '#ff5733')
 }
  return <>
+ 
 <section>
+  <Header/>
   <div className={style.div}>
 <p className={style.subtitle}> Filmes</p>
 <div className={style.lenght} >
