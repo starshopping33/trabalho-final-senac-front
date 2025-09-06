@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import style from "./style.module.css"
 import { apiController } from "../../controller/api.controller"
 import { Poster } from "../../components/poster/Poster"
+import { useNavigate } from "react-router-dom"
 //import { useNavigate } from "react-router-dom"
 
 export interface Usuario {
@@ -22,6 +23,7 @@ export const Home=()=> {
   const [filmes,setFilmes]= useState([] as Filme[])
   const [page,setPage] = useState(1)
   const [loading,setLoading]=useState(true)
+  const navigate=useNavigate()
     const getFavorites=async(filmesprop:Filme[]) => {
       const token = localStorage.getItem("token")
         const res = await apiController.getFavoritos(token!)
@@ -50,12 +52,32 @@ export const Home=()=> {
     setFilmes(resfilmes)
         setLoading(false)
   }
-
-  //const navigate = useNavigate();
   
+const validateToken = async () => {
+  const token = localStorage.getItem("token")
+  if(!token) {
+    navigate("/login")
+    return false
+  }else{
+    try {
+      const isValid = await apiController.retrieve(token)
+      if(!isValid){
+        navigate("/login")
+      }
+    } catch (error) {
+      navigate("/login")
+    }   
+
+  }
+ 
+  
+
+}
+
 
   useEffect(()=>{
     // setLoading(true)
+    validateToken()
     getFilmes()
  
   },[])

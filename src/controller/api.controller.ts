@@ -11,7 +11,7 @@ export const service = axios.create({
 
 export const apiController = {
     retrieve:async (token:string)=>{
-        const res = await service.get("/usuarios/retrieve", {
+        const res = await service.get("/cadastro/retrive", {
             
                     headers: {
                         Authorization: `Bearer ${token}`
