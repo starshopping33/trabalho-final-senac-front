@@ -3,6 +3,7 @@ import type { iCreateLogin } from "../schemas/login.schemas";
 import type { iCreateCadastro } from "../schemas/usuario.schemas";
 import type { iCreateFavoritar } from "../schemas/favoritos.schemas";
 import { type icreatecomentario } from "../schemas/comment.schemas";
+import type { icreateconfig } from "../schemas/Admin.Schemas";
 
 export const service = axios.create({
     baseURL:"http://localhost:3001",
@@ -57,5 +58,28 @@ export const apiController = {
          console.log(res,"res da api")
          return true
         
-    }
+    },
+
+    getConfig: async (p0: string) => {
+    const res = await service.get("/admin")
+    return res.data
+  },
+
+    adminpost: async (data: { cor: string; logo: string; titulo: string }) => {
+    const token = localStorage.getItem("token")
+    const res = await service.post("/admin", data, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    return res.data
+  },
+
+  updateConfig: async (data: Partial<{ cor: string; logo: string; titulo: string; }>, p0: string) => {
+    const token = localStorage.getItem("token")
+    const res = await service.put("/admin", data, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    return res.data
+  }
+   
+
 }

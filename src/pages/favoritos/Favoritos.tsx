@@ -3,6 +3,7 @@ import style from "./style.module.css"
 import { apiController } from "../../controller/api.controller"
 import { Poster } from "../../components/poster/Poster"
 import type { Filme } from "../home/Home"
+import { Header } from "../../components/header/Header"
 
 
 
@@ -30,8 +31,9 @@ export const Favoritos= ()=> {
     const goTo=(filme:Filme)=>{
       console.log(filme,"filme?"); 
     }
-    return (
-        <section className={style.section}>
+    return (<> 
+    <Header/>
+    <section className={style.section}>
             <div className={style.div}>
             <h1 className={style.h1}>Movies Favorites</h1>
             <p className={style.subtitle}>🔴 Filmes Favoritos🔴</p>
@@ -55,6 +57,8 @@ export const Favoritos= ()=> {
             <p className={style.subtitle}>🔴 Login 🔴</p>
             </div>
         </section>
+    
+    </>
     )
 
 }

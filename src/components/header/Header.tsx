@@ -60,13 +60,7 @@ export const Header =()=>{
                 Favoritos
                 </button>
             </nav>
-            <nav>
-                <button
-                onClick={() => navigate("/favoritos")}
-                className={style.perfilbotao5}>
-                Favoritos
-                </button>
-            </nav>
+            
             
 
         </div>
