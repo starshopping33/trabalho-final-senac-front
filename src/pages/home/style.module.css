@@ -69,7 +69,14 @@ font-size: 48px;
   background: linear-gradient(90deg, #ffcc00, #ff0066);
 }
 
-
+.divadm{
+  adding: "20px";
+  
+  border: "1px solid gray";
+   
+  marginBottom: "20px";
+  
+  }
 
 .card{
      position: relative;
